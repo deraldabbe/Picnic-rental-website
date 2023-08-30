@@ -1,3 +1,4 @@
+
 // reducers/picnicReducer.js
 
 const initialState = {

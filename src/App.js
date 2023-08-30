@@ -1,3 +1,5 @@
+
+
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './UtahPicnicCo.css'; 
@@ -9,10 +11,13 @@ import Services from './components/Services';
 import Rentals from './components/Rentals';
 import About from './components/About';
 import Contact from './components/Contact';
+import { AuthProvider } from './AuthProvider';
 
 const App = () => {
   return (
     <Router>
+      <AuthProvider>
+
       <div className="App">
         <Header />
         <Routes>
@@ -35,6 +40,7 @@ const App = () => {
           <p>&copy; 2023 Utah Picnic Co. All rights reserved.</p>
         </footer>
       </div>
+      </AuthProvider>
     </Router>
   );
 }

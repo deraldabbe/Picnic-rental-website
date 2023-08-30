@@ -1,25 +1,25 @@
-
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const { Sequelize, DataTypes } = require('sequelize');
-const mysqlConnection = require('./picnic-backend/connection.js.mysql');
+const mysqlConnection = require('./connection.js');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3002;
 
+// Middleware
 app.use(cors());
 app.use(bodyParser.json());
 
-
-const sequelize = new Sequelize(mysqlConnection.database, mysqlConnection.username, mysqlConnection.password, {
-  host: mysqlConnection.host,
+// Sequelize setup
+const sequelize = new Sequelize('picnic_rental', 'admin', 'Autoplus1!', {
+  host: '127.0.0.1',
   dialect: 'mysql',
 });
 
-
+// Define User model
 const User = sequelize.define('User', {
   name: {
     type: DataTypes.STRING,
@@ -40,19 +40,20 @@ app.get('/', (req, res) => {
   res.send('Welcome to the Picnic Rental Backend!');
 });
 
-
+// Handle registration
 app.post('/register', async (req, res) => {
   try {
     const { name, email, password } = req.body;
     const hashedPassword = await bcrypt.hash(password, 10);
     const newUser = await User.create({ name, email, password: hashedPassword });
-    res.status(201).json(newUser);
+    const token = jwt.sign({ userId: newUser.id}, 'Authorize54');
+    res.status(201).json({ message: 'Registration successful', token});
   } catch (error) {
     res.status(500).json({ error: 'Error registering user' });
   }
 });
 
-
+// Handle login
 app.post('/login', async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -68,13 +69,14 @@ app.post('/login', async (req, res) => {
       return res.status(401).json({ error: 'Invalid email or password' });
     }
 
-    const token = jwt.sign({ userId: user.id }, 'Authorize54'); 
+    const token = jwt.sign({ userId: user.id }, 'Authorize54'); // Use your secret key
     res.json({ token });
   } catch (error) {
     res.status(500).json({ error: 'Error logging in' });
   }
 });
 
+// Start the server
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });

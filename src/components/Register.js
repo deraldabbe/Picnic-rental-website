@@ -1,47 +1,43 @@
+
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
-import "./Register.css";
 
 const Register = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [registrationSuccess, setRegistrationSuccess] = useState(false);
-  const navigate = useNavigate();
+  const [registrationError, setRegistrationError] = useState('');
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
+  const handleRegister = async () => {
     try {
-      const response = await axios.post('/register', {
-        name,
-        email,
-        password,
-      });
-
-      console.log(response.data);
+      await axios.post('http://localhost:3002/register', { name, email, password , });
       setRegistrationSuccess(true);
-
-      
-      navigate('/login');
+      setRegistrationError('');
+      setName('');
+      setEmail('');
+      setPassword('');
     } catch (error) {
-      console.error(error.response.data);
+      console.error('Registration failed:', error);
+      if (error.response) {
+        setRegistrationError(error.response.data.error || 'Registration failed due to an error.');
+      } else {
+        setRegistrationError('Registration failed. Please try again later.');
+      }
     }
   };
 
   return (
     <div>
       <h2>Register</h2>
-      <form onSubmit={handleSubmit}>
+      <form>
         <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
         <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
         <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
-        <button type="submit">Register</button>
+        <button type="button" onClick={handleRegister}>Register</button>
       </form>
-      {registrationSuccess && (
-        <p className="success-message">Account created successfully! You can now log in.</p>
-      )}
+      {registrationSuccess && <p>Registration successful! You can now log in.</p>}
+      {registrationError && <p>Error: {registrationError}</p>}
     </div>
   );
 };
