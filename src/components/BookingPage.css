@@ -1,0 +1,61 @@
+
+.booking-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+
+.book-now-button {
+    background-color: #007bff; /* Blue color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+  }
+  
+  .book-now-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
+
+  .calendar {
+    margin-bottom: 20px;
+  }
+  
+  .rental-images-container {
+    display: flex; /* Use flexbox to display images horizontally */
+    align-items: center; /* Center images vertically */
+    justify-content: space-between; /* Center images horizontally */
+    margin-top: 10px; /* Add margin above images */
+  }
+  
+  .rental-image {
+    width: 200px; /* Adjust image width */
+    height: auto; /* Maintain image aspect ratio */
+    margin: 25px; /* Add margin between images */
+  }
+
+  .rental-items {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+  
+  .confirm-button {
+    background-color: #007bff; /* Blue color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px; 
+  }
+  
+  .confirm-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }

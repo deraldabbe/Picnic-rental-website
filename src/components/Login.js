@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import axios from "axios";
+// import axios from "axios";
 import { useAuth } from "../AuthProvider";
 
 const Login = () => {
@@ -10,18 +10,20 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    try {
-      const response = await axios.post("http://localhost:3001/login", {
-        email,
-        password,
-      });
+    //try {
+    //  const response = await axios.post("http://localhost:3001/login", {
+    //    email,
+     //   password,
+    //  });
 
-      login(response.data.token);
-
-      console.log(response.data);
-    } catch (error) {
-      console.error(error.response.data);
-    }
+      //login(response.data.token);
+login("mockAuthToken")
+      //console.log(response.data);
+      setEmail("");
+      setPassword("");
+   // } catch (error) {
+    //  console.error(error.response.data);
+   // }
   };
 
   return (

@@ -22,6 +22,9 @@ const Header = () => {
           <li>
             <Link to="/contact">Contact</Link>
           </li>
+          <li>
+            <Link to="/book">Book Rentals</Link>
+          </li>
         </ul>
       </nav>
       <AuthButtons />

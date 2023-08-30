@@ -1,17 +1,18 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import "./UtahPicnicCo.css";
-import Login from "./components/Login";
-import Register from "./components/Register";
-import Header from "./components/Header";
-import Home from "./components/Home";
-import Services from "./components/Services";
-import Rentals from "./components/Rentals";
-import About from "./components/About";
-import Contact from "./components/Contact";
-import { AuthProvider } from "./AuthProvider";
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import './UtahPicnicCo.css';
+import Login from './components/Login';
+import Register from './components/Register';
+import Header from './components/Header';
+import Home from './components/Home';
+import Services from './components/Services';
+import Rentals from './components/Rentals';
+import About from './components/About';
+import Contact from './components/Contact';
+import { AuthProvider } from './AuthProvider';
+import BookingPage from './components/BookingPage';
 
-const App = () => {
+function App() {
   return (
     <Router>
       <AuthProvider>
@@ -25,6 +26,7 @@ const App = () => {
             <Route path="/contact" element={<Contact />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/book" element={<BookingPage />} /> {/* Add this route */}
           </Routes>
           <footer>
             <ul>
@@ -43,6 +45,9 @@ const App = () => {
               <li>
                 <Link to="/contact">Contact</Link>
               </li>
+              <li>
+                <Link to="/book">Book Rentals</Link> {/* Add this link */}
+              </li>
             </ul>
             <p>&copy; 2023 Utah Picnic Co. All rights reserved.</p>
           </footer>
@@ -50,6 +55,6 @@ const App = () => {
       </AuthProvider>
     </Router>
   );
-};
+}
 
 export default App;
