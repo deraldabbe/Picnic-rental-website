@@ -1,13 +1,10 @@
-
-'use strict';
-const { Model } = require('sequelize');
-const bcrypt = require('bcrypt');
+"use strict";
+const { Model } = require("sequelize");
+const bcrypt = require("bcrypt");
 
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
-    static associate(models) {
- 
-    }
+    static associate(models) {}
   }
 
   User.init(
@@ -24,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
       sequelize,
-      modelName: 'User',
+      modelName: "User",
       hooks: {
         beforeCreate: async (user) => {
           const salt = await bcrypt.genSalt(10);
@@ -36,4 +33,3 @@ module.exports = (sequelize, DataTypes) => {
 
   return User;
 };
-

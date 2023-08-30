@@ -1,8 +1,7 @@
+const { Sequelize, DataTypes } = require("sequelize");
+const sequelize = require("../db/connection");
 
-const { Sequelize, DataTypes } = require('sequelize');
-const sequelize = require('../db/connection');
-
-const Rental = sequelize.define('Rental', {
+const Rental = sequelize.define("Rental", {
   name: {
     type: DataTypes.STRING,
     allowNull: false,

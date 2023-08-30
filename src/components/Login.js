@@ -1,29 +1,26 @@
-
-// components/Login.js
-import React, { useState } from 'react';
-import axios from 'axios';
-import { useAuth } from '../AuthProvider'; // Import the useAuth hook
+import React, { useState } from "react";
+import axios from "axios";
+import { useAuth } from "../AuthProvider";
 
 const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const { login } = useAuth();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:3001/login', {
+      const response = await axios.post("http://localhost:3001/login", {
         email,
         password,
       });
 
-      // Save token and set user as logged in
       login(response.data.token);
 
-      console.log(response.data); // Handle success
+      console.log(response.data);
     } catch (error) {
-      console.error(error.response.data); // Handle error
+      console.error(error.response.data);
     }
   };
 

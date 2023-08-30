@@ -1,12 +1,10 @@
-
-// src/routes.js
-import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Home from './components/Home';
-import Services from './components/Services';
-import Rentals from './components/Rentals';
-import About from './components/About';
-import Contact from './components/Contact';
+import React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Home from "./components/Home";
+import Services from "./components/Services";
+import Rentals from "./components/Rentals";
+import About from "./components/About";
+import Contact from "./components/Contact";
 
 const Routes = () => {
   return (

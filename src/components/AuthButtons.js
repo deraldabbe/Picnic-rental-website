@@ -1,8 +1,7 @@
-
-import React from 'react';
-import { useAuth } from '../AuthProvider'; // Import the useAuth hook
-import { Link } from 'react-router-dom';
-import './AuthButtons.css'; // Import your CSS file for styling
+import React from "react";
+import { useAuth } from "../AuthProvider";
+import { Link } from "react-router-dom";
+import "./AuthButtons.css";
 
 const AuthButtons = () => {
   const { user, logout } = useAuth();

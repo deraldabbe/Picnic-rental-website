@@ -1,6 +1,5 @@
-
-import React from 'react';
-import { useAuth } from './AuthProvider';
+import React from "react";
+import { useAuth } from "./AuthProvider";
 
 const Logout = () => {
   const { logout } = useAuth();
@@ -9,9 +8,7 @@ const Logout = () => {
     logout();
   };
 
-  return (
-    <button onClick={handleLogout}>Logout</button>
-  );
+  return <button onClick={handleLogout}>Logout</button>;
 };
 
 export default Logout;
