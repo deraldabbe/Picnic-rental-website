@@ -2,6 +2,11 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+If you have any questions or inquiries regarding the Picnic-Rental-App, please contact Derald Abbe at deraldabbe1@gmail.com.
+
+[Link to Demo Video](https://youtu.be/99ekPMtFiuQ)
+
+Thank you for your interest in the Picnic-Rental-App. 
 ## Available Scripts
 
 In the project directory, you can run:
