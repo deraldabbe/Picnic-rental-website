@@ -48,7 +48,9 @@ const BookingPage = () => {
 
   return (
     <div className="booking-container">
+        <div className='booking-title'>
       <h1>Book Rentals</h1>
+        </div>
       <div className="calendar">
         <h2>Select Date:</h2>
         <Calendar 
@@ -183,6 +185,7 @@ const BookingPage = () => {
           </div>
         <button onClick={closeModal}>Close</button>
       </Modal>
+      
     </div>
   );
 };

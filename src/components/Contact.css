@@ -1,0 +1,70 @@
+.contact-form-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .contact-title {
+    text-align: center;
+    margin-bottom: 20px; /* Optional: Add some space between the title and the form */
+    font-family: "Courier New", Courier, monospace;
+    font-size: 20px;
+  }
+  
+
+  .contact-form {
+    width: 100%; /* Adjust this width as needed */
+    max-width: 400px; /* Set a maximum width */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin-left: 1rem;
+    border: none;
+    background-color: #e99991;
+    color: #973325;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .contact-info-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .contact-info {
+    list-style-type: none;
+    text-align: center;
+    font-size: 18px;
+    color: #973325;
+  }
+  
+  
+  /* Add other styles for the form inputs and button as needed */
+ 
+  .contact-label {
+    display: block;
+    font-weight: bold;
+  }
+  
+  .contact-input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .contact-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+  }
+  
+  .contact-button:hover {
+    background-color: #0056b3;
+  }

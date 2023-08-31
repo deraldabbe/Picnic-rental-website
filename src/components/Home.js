@@ -10,7 +10,7 @@ const Home = () => {
         alt="Picnic Logo"
       />
       <p>Your One-Stop Shop for Picnic Rentals</p>
-      <Link to="#rentals" className="btn">
+      <Link to="./rentals" className="btn">
         Explore Rentals
       </Link>
     </section>

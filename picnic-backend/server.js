@@ -7,13 +7,13 @@ const { Sequelize, DataTypes } = require("sequelize");
 const mysqlConnection = require("./connection.js");
 
 const app = express();
-const PORT = process.env.PORT || 3002;
+const PORT = process.env.PORT || 3001;
 
 app.use(cors());
 app.use(bodyParser.json());
 
 const sequelize = new Sequelize("picnic_rental", "admin", "Autoplus1!", {
-  host: "127.0.0.1",
+  host: "10.0.0.94",
   dialect: "mysql",
 });
 

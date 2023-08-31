@@ -1,6 +1,7 @@
+/*
 import React, { useState } from "react";
-// import axios from "axios";
-import './Register.css';
+import axios from "axios";
+import './Register.css'
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -11,7 +12,11 @@ const Register = () => {
 
   const handleRegister = async () => {
     try {
-      // Simulate a successful registration
+      await axios.post("http://localhost:3002/register", {
+        name,
+        email,
+        password,
+      });
       setRegistrationSuccess(true);
       setRegistrationError("");
       setName("");
@@ -67,3 +72,4 @@ const Register = () => {
 };
 
 export default Register;
+*/
